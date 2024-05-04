@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raxar"]
 size = Vector2(399, 1947.5)
 
-[node name="Pipes" type="Node2D" node_paths=PackedStringArray("top_pipe", "bottom_pipe")]
+[node name="Pipes" type="Node2D" node_paths=PackedStringArray("top_pipe", "bottom_pipe", "texture")]
 script = ExtResource("1_8gaf7")
 top_pipe = NodePath("TopPipe")
 bottom_pipe = NodePath("BottomPipe")
+texture = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8

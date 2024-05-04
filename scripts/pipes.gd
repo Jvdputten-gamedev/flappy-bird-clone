@@ -4,6 +4,7 @@ const MOVE_SPEED: float = 200
 
 @export var top_pipe: Area2D
 @export var bottom_pipe: Area2D
+@export var texture: TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,3 +20,6 @@ func _process(delta):
 
 func _on_pipe_entered(body: Node2D):
 	print(body)
+
+func change_color(color: Color):
+	texture.modulate = color
