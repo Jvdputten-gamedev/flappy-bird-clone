@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bry5b350ayjrm"]
+
+[ext_resource type="PackedScene" uid="uid://2l7whhv5ofuh" path="res://scenes/flappy.tscn" id="1_kr6g4"]
+[ext_resource type="PackedScene" uid="uid://werib3uva1kj" path="res://scenes/pipes.tscn" id="2_5qkvn"]
+[ext_resource type="PackedScene" uid="uid://cvyh8ebp200oe" path="res://scenes/pipe_spawner.tscn" id="3_ia5ce"]
+
+[node name="Main" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "High score: "
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2217.0
+offset_top = -1311.0
+offset_right = -2217.0
+offset_bottom = -1311.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.77818, 4.12947)
+color = Color(0, 0.823529, 0.827451, 1)
+
+[node name="Flappy" parent="." instance=ExtResource("1_kr6g4")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.35, 0.35)
+
+[node name="Pipes" parent="." instance=ExtResource("2_5qkvn")]
+
+[node name="PipeSpawner" parent="." instance=ExtResource("3_ia5ce")]

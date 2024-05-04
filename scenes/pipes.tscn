@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://werib3uva1kj"]
+
+[ext_resource type="Script" path="res://scripts/pipes.gd" id="1_8gaf7"]
+[ext_resource type="Texture2D" uid="uid://bdkah13vwp836" path="res://assets/pipes.svg" id="1_ab1qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raxar"]
+size = Vector2(399, 1947.5)
+
+[node name="Pipes" type="Node2D" node_paths=PackedStringArray("top_pipe", "bottom_pipe")]
+script = ExtResource("1_8gaf7")
+top_pipe = NodePath("TopPipe")
+bottom_pipe = NodePath("BottomPipe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = -2400.0
+offset_right = 204.5
+offset_bottom = 2400.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ab1qb")
+
+[node name="TopPipe" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
+position = Vector2(0, -1246.25)
+shape = SubResource("RectangleShape2D_raxar")
+
+[node name="BottomPipe" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(-2, 1419.5)
+shape = SubResource("RectangleShape2D_raxar")

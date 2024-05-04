@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvyh8ebp200oe"]
+
+[ext_resource type="Script" path="res://scripts/pipe_spawner.gd" id="1_ai151"]
+[ext_resource type="PackedScene" uid="uid://werib3uva1kj" path="res://scenes/pipes.tscn" id="2_m6fy5"]
+
+[node name="PipeSpawner" type="Node" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_ai151")
+timer = NodePath("Timer")
+pipes_scene = ExtResource("2_m6fy5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
